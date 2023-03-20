@@ -13,8 +13,9 @@ def load_config():
         raise Exception('配置文件不存在，请根据config-template.json模板创建config.json文件')
 
     config_str = read_file(config_path)
+    print("+++++")
     # 将json字符串反序列化为dict类型
-    config = json.loads(config_str)
+    config = json.loads(config_str, strict=False)
     print("载入环节" )
     print(config)
     return config
